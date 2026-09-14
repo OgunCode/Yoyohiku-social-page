@@ -13,8 +13,26 @@
     <script src="js/script.js" defer></script>
 </head>
 
-<body>
-    <main class="social-page">
+<body class="arcade-locked">
+
+    <section class="start-screen" id="startScreen">
+        <div class="start-content">
+            <p class="start-player">PLAYER DETECTED</p>
+
+            <h1 class="start-logo">YOYOHIKU ARCADE</h1>
+
+            <button class="start-button" id="startButton" type="button">
+                <span aria-hidden="true">🪙</span>
+                INSERT COIN
+            </button>
+
+            <p class="start-message">Press to enter the Arcade</p>
+        </div>
+    </section>
+
+    <div class="background-effects" id="backgroundEffects" aria-hidden="true"></div>
+
+    <main class="social-page" id="socialPage">
         <article class="arcade-card">
             <header class="profile">
                 <div class="profile-avatar">
@@ -76,25 +94,23 @@
             </div>
 
             <section class="current-cabinet" aria-labelledby="cabinet-heading">
-                <div class="cabinet-status">
+                <div class="cabinet-status" id="cabinetStatus">
                     <span class="status-light" aria-hidden="true"></span>
-                    <span>Cabinet Active</span>
+                    <span id="cabinetStatusText">Cabinet Active</span>
                 </div>
 
-                <p class="cabinet-label">NOW PLAYING</p>
+                <p class="cabinet-label">Current Cabinet</p>
 
-                <h2 id="cabinet-heading" class="cabinet-title">
-                    Fire Emblem: Fortune’s Weave
+                <h2 id="cabinetTitle" class="cabinet-title">
+                    Loading Cabinet....
                 </h2>
 
-                <p class="cabinet-description">
-                    A new strategy RPG cabinet has activated. Enter the Arcade and
-                    experience the story with me.
+                <p class="cabinet-description" id="cabinetDescription">
+                    The Arcade is searching for the current game.
                 </p>
 
-                <a class="cabinet-button" href="https://www.twitch.tv/yoyohiku" target="_blank"
-                    rel="noopener noreferrer">
-                    Enter Current Cabinet
+                <a class="cabinet-button" id="cabinetButton" href="https://www.twitch.tv/yoyohiku" target="_blank"
+                    rel="noopener noreferrer">Enter Current Cabinet
                     <span aria-hidden="true">→</span>
                 </a>
             </section>
