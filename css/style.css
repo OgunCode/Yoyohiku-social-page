@@ -1,0 +1,558 @@
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+:root {
+  --color-background: #12091f;
+  --color-background-light: #25103d;
+
+  --color-card: #f8f7ff;
+  --color-text: #21172c;
+  --color-muted: #665a70;
+
+  --color-primary: #a855f7;
+  --color-accent: #22d3ee;
+  --color-token: #fbbf24;
+
+  --color-border: #130b1c;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    min-height: 100%;
+}
+
+body{
+    min-height: 100vh;
+    padding: 32px 16px;
+
+    font-family: "Space Grotesk, san-serif";
+    color: var(--color-text);
+    
+    background-color: var(--color-background);
+
+    background-image: radial-gradient( circle, rgba(168, 85, 247, 0.45)2px, transparent 3px), linear-gradient( 135deg, 
+    var(--color-background), var(--color-background-light));
+
+    background-size: 40px 40px,100% 100%;
+}
+
+.social-page{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Arcade Card */
+
+.arcade-card{
+    width: min(100%, 620px);
+    padding: 48px;
+
+    background-color: var(--color-card);
+
+    border: 3px solid var(--color-border);
+    border-radius: 12px;
+
+    box-shadow:8px 8px 0 var(--color-primary)
+    14px 14px 0 var(--color-border);
+}
+
+/* PROFILE */
+
+.profile{
+    text-align: center;
+}
+
+.profile-avatar{
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 28px;
+
+
+    border: 4px solid var(--color-primary);
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    box-shadow: 0 0 5px var(--color-primary),
+    0 0 24px rgba(168, 85, 247, 0.68);
+}
+
+.profile-avatar img{
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+
+}
+
+.profile-eye{
+    margin-bottom: 14px;
+
+    color:var(--color-primary);
+    font-size: 0.7rem;
+    font-family: "Press Start 2P", monospace;
+    letter-spacing: 2px;
+}
+
+.profile-name{
+    margin-bottom: 12px;
+
+    font-size: clamp( 2rem, 8vw, 3.5rem);
+    line-height:1;
+}
+
+.profile-title{
+    margin-bottom: 24px;
+
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.profile-description{
+    max-width: 480px;
+    margin: 0 auto 24px;
+
+    color: var(--color-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.brand-line{
+    color: var(--color-text);
+    font-size: 0.65rem;
+    font-family: "Press Start 2P", monospace;
+    line-height: 1.8;
+}
+
+/* ==========================================
+   PIXEL DIVIDER
+========================================== */
+
+.pixel-divider {
+  margin: 44px 0;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.pixel-divider span:not(.divider-token) {
+  height: 3px;
+  flex: 1;
+
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-primary) 0,
+    var(--color-primary) 8px,
+    transparent 8px,
+    transparent 14px
+  );
+}
+
+.divider-token {
+  font-size: 1.5rem;
+}
+
+
+/* ==========================================
+   CURRENT CABINET
+========================================== */
+
+.current-cabinet {
+  padding: 28px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(168, 85, 247, 0.13),
+      rgba(34, 211, 238, 0.1)
+    );
+
+  border: 3px solid var(--color-border);
+  border-radius: 10px;
+
+  box-shadow: 5px 5px 0 var(--color-primary);
+}
+
+.cabinet-status {
+  margin-bottom: 22px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  color: #16803c;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.status-light {
+  width: 11px;
+  height: 11px;
+
+  display: inline-block;
+
+  background-color: #22c55e;
+  border-radius: 50%;
+
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
+
+  animation: status-pulse 1.8s infinite;
+}
+
+.cabinet-label {
+  margin-bottom: 14px;
+
+  color: var(--color-primary);
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.65rem;
+  line-height: 1.6;
+}
+
+.cabinet-title {
+  margin-bottom: 16px;
+
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  line-height: 1.2;
+}
+
+.cabinet-description {
+  max-width: 440px;
+  margin: 0 auto 24px;
+
+  color: var(--color-muted);
+  line-height: 1.7;
+}
+
+.cabinet-button {
+  padding: 15px 20px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  color: #ffffff;
+  background-color: var(--color-primary);
+
+  border: 3px solid var(--color-border);
+  border-radius: 8px;
+
+  box-shadow: 4px 4px 0 var(--color-border);
+
+  font-weight: 700;
+  text-decoration: none;
+
+  transition:
+    background-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.cabinet-button:hover {
+  background-color: #7e22ce;
+
+  box-shadow:
+    4px 4px 0 var(--color-border),
+    0 0 20px rgba(168, 85, 247, 0.7);
+
+  transform: translate(-2px, -2px);
+}
+
+.cabinet-button:active {
+  box-shadow: 1px 1px 0 var(--color-border);
+  transform: translate(2px, 2px);
+}
+
+.cabinet-button:focus-visible {
+  outline: 4px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+
+/* ==========================================
+   STATUS ANIMATION
+========================================== */
+
+@keyframes status-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.45;
+    transform: scale(0.8);
+  }
+}
+
+/* ==========================================
+   COMMUNITY SECTION
+========================================== */
+
+.community {
+  text-align: center;
+}
+
+.community-label {
+  margin-bottom: 14px;
+
+  color: var(--color-accent);
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.65rem;
+  line-height: 1.6;
+}
+
+.community-title {
+  margin-bottom: 16px;
+
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
+}
+
+.community-description {
+  max-width: 460px;
+  margin: 0 auto 24px;
+
+  color: var(--color-muted);
+  line-height: 1.7;
+}
+
+.community-button {
+  padding: 15px 24px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  color: var(--color-text);
+  background-color: var(--color-accent);
+
+  border: 3px solid var(--color-border);
+  border-radius: 8px;
+
+  box-shadow: 4px 4px 0 var(--color-border);
+
+  font-weight: 700;
+  text-decoration: none;
+
+  transition:
+    background-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.community-button:hover {
+  background-color: #67e8f9;
+
+  box-shadow:
+    4px 4px 0 var(--color-border),
+    0 0 20px rgba(34, 211, 238, 0.75);
+
+  transform: translate(-2px, -2px);
+}
+
+.community-button:active {
+  box-shadow: 1px 1px 0 var(--color-border);
+  transform: translate(2px, 2px);
+}
+
+.community-button:focus-visible {
+  outline: 4px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.page-footer {
+  margin-top: 52px;
+  padding-top: 28px;
+
+  text-align: center;
+
+  border-top: 2px solid rgba(33, 23, 44, 0.15);
+}
+
+.page-footer p {
+  margin-bottom: 14px;
+}
+
+.footer-tagline {
+  color: var(--color-primary);
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.55rem;
+  line-height: 1.8;
+}
+
+.footer-credit {
+  color: var(--color-muted);
+  font-size: 0.8rem;
+}
+
+
+
+
+
+
+/* Mobile */
+
+@media (max-width:600px){
+    body{
+        padding: 20px 12px;
+    }
+
+    .arcade-card{
+        padding: 35px 22px;
+
+        box-shadow:
+        5px 5px 0 var(--color-primary)
+        9px 9px 0 var(--color-border);
+    }
+
+    .profile-avatar{
+        width: 110px;
+        height: 100px;
+    }
+
+    .profile-description{
+        font-size: 0.95rem;
+    }
+
+    .brand-line{
+        font-size: 0.65rem;
+    }
+        .social-links {
+  grid-template-columns: 1fr;
+    }
+
+    .social-button {
+     min-height: 54px;
+    }
+
+    .current-cabinet {
+        padding: 24px 18px;
+    }
+
+    .cabinet-button {
+        width: 100%;
+    }
+
+
+
+}
+
+    
+
+
+
+/* Access */
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+.sr-only {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+
+  white-space: nowrap;
+  border: 0;
+}
+
+
+/* ==========================================
+   SOCIAL LINKS
+========================================== */
+
+.social-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+
+  margin-top: 36px;
+}
+
+.social-button {
+  min-height: 58px;
+  padding: 14px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  color: var(--color-text);
+  background-color: #ffffff;
+
+  border: 3px solid var(--color-border);
+  border-radius: 8px;
+
+  box-shadow: 4px 4px 0 var(--color-border);
+
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.social-button:hover {
+  color: #ffffff;
+  background-color: var(--color-primary);
+
+  box-shadow:
+    4px 4px 0 var(--color-border),
+    0 0 18px rgba(168, 85, 247, 0.7);
+
+  transform: translate(-2px, -2px);
+}
+
+.social-button:active {
+  box-shadow: 1px 1px 0 var(--color-border);
+  transform: translate(2px, 2px);
+}
+
+.social-button:focus-visible {
+  outline: 4px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+.social-icon {
+  width: 24px;
+
+  display: inline-flex;
+  justify-content: center;
+
+  font-size: 1.1rem;
+}
+
+
+
