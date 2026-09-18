@@ -3,10 +3,10 @@ const startButton = document.getElementById("startButton");
 const socialPage = document.getElementById("socialPage");
 
 const cabinetData = {
-  game: "Tera",
+  game: "Fire Emblem Fortune's Weave",
 
   description:
-    "A old ARMMORPG cabinet has activated. Enter the Arcade and experience the story with me.",
+    "A Brand new RPG cabinet has activated. Enter the Arcade and experience the story with me.",
 
   link: "https://www.twitch.tv/yoyohiku",
 
@@ -15,20 +15,15 @@ const cabinetData = {
 
 const cabinetStatus = document.getElementById("cabinetStatus");
 
-const cabinetStatusText = document.getElementById(
-  "cabinetStatusText"
-);
+const cabinetStatusText = document.getElementById("cabinetStatusText");
 
 const cabinetTitle = document.getElementById("cabinetTitle");
 
-const cabinetDescription = document.getElementById(
-  "cabinetDescription"
-);
+const cabinetDescription = document.getElementById("cabinetDescription");
 
 const cabinetButton = document.getElementById("cabinetButton");
 
 const currentYear = document.getElementById("currentYear");
-
 
 function updateCurrentCabinet() {
   if (
@@ -43,8 +38,7 @@ function updateCurrentCabinet() {
 
   cabinetTitle.textContent = cabinetData.game;
 
-  cabinetDescription.textContent =
-    cabinetData.description;
+  cabinetDescription.textContent = cabinetData.description;
 
   cabinetButton.href = cabinetData.link;
 
@@ -73,8 +67,6 @@ function updateCurrentCabinet() {
 
 updateCurrentCabinet();
 
-
-
 function enterArcade() {
   if (!startScreen || !startButton || !socialPage) {
     return;
@@ -93,7 +85,7 @@ function enterArcade() {
       () => {
         startScreen.remove();
       },
-      { once: true }
+      { once: true },
     );
   }, 500);
 }
@@ -101,8 +93,6 @@ function enterArcade() {
 if (startButton) {
   startButton.addEventListener("click", enterArcade);
 }
-
-
 
 if (currentYear) {
   currentYear.textContent = new Date().getFullYear();
@@ -116,7 +106,7 @@ function createFloatingTokens() {
   }
 
   const prefersReducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
+    "(prefers-reduced-motion: reduce)",
   ).matches;
 
   if (prefersReducedMotion) {
@@ -136,25 +126,13 @@ function createFloatingTokens() {
     token.classList.add("floating-token");
     token.textContent = "YH";
 
-    token.style.setProperty(
-      "--token-size",
-      `${tokenSize}px`
-    );
+    token.style.setProperty("--token-size", `${tokenSize}px`);
 
-    token.style.setProperty(
-      "--token-duration",
-      `${tokenDuration}s`
-    );
+    token.style.setProperty("--token-duration", `${tokenDuration}s`);
 
-    token.style.setProperty(
-      "--token-position",
-      `${tokenPosition}%`
-    );
+    token.style.setProperty("--token-position", `${tokenPosition}%`);
 
-    token.style.setProperty(
-      "--token-delay",
-      `${tokenDelay}s`
-    );
+    token.style.setProperty("--token-delay", `${tokenDelay}s`);
 
     backgroundEffects.appendChild(token);
   }
