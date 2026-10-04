@@ -3,10 +3,10 @@ const startButton = document.getElementById("startButton");
 const socialPage = document.getElementById("socialPage");
 
 const cabinetData = {
-  game: "Fire Emblem Fortune's Weave",
+  game: "AION2",
 
   description:
-    "A Brand new RPG cabinet has activated. Enter the Arcade and experience the story with me.",
+    "A Brand new MMO cabinet has activated. Enter the Arcade and experience the story with me.",
 
   link: "https://www.twitch.tv/yoyohiku",
 
