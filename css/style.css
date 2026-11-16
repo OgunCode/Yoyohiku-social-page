@@ -9,3 +9,36 @@
 body { padding-bottom: 100px; }
 @media (max-width: 450px) { .scroll-coin-track { height: 48px; left: 10px; right: 10px; } .scroll-coin { width: 48px; height: 48px; } }
 @media (prefers-reduced-motion: reduce) { .scroll-coin-track { display: none; } }
+
+/* Cabinet artwork stays in its original proportions. */
+.cabinet-shell { position: relative; max-width: 720px; margin: 0 auto; background: #171135; border-radius: 12px; overflow: hidden; }
+.cabinet-art { position: relative; }
+.cabinet-art > img { width: 100%; height: auto; display: block; }
+.cabinet-marquee { position: absolute; top: 6%; left: 12%; right: 12%; height: 13%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center; }
+.cabinet-marquee span { font-size: 11px; font-weight: bold; letter-spacing: 3px; color: #fcdf35; }
+.cabinet-marquee strong { font-size: clamp(16px, 2.5vw, 26px); letter-spacing: 1px; text-shadow: 0 0 12px #e58bff; }
+.cabinet-shell .control-deck { position: absolute; top: 38%; left: 15%; width: 70%; height: 30%; margin: 0; padding: 12px 6px; border: 0; background: transparent; display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: center; }
+.cabinet-shell .eyebrow { color: #fff; font-size: 8px; letter-spacing: 1px; text-align: center; margin-bottom: 12px; }
+.cabinet-shell .social-links { gap: 12px 8px; }
+.cabinet-shell .social-button { color: white; font-size: 9px; text-shadow: 0 1px 2px #160d38; }
+.cabinet-shell .social-icon { width: 44px; height: 44px; font-size: 24px; background: #301053; box-shadow: 0 3px 0 #f8ce37; }
+.cabinet-shell .social-icon svg { width: 24px; height: 24px; }
+.cabinet-shell .page-nav { display: flex; gap: 11px; }
+.cabinet-shell .page-nav a { min-height: 40px; padding: 6px 10px; font-size: 11px; gap: 8px; background: #301053; }
+.cabinet-shell .page-nav span { font-size: 19px; width: 20px; }
+.cabinet-shell a:focus-visible { outline-color: #fff538; }
+.cabinet-mobile-screen { display: none; }
+@media (max-width: 700px) {
+ .cabinet-shell .control-deck { position: relative; top: auto; left: auto; width: 100%; height: auto; padding: 24px 20px 30px; gap: 24px; background: #241044; border-top: 3px solid #f5d531; }
+ .cabinet-shell .social-icon { width: 48px; height: 48px; }
+ .cabinet-shell .page-nav a { min-height: 44px; }
+ .cabinet-mobile-screen { position: absolute; top: 42%; left: 17%; right: 17%; height: 23%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff437; font-weight: bold; font-size: clamp(17px, 4vw, 28px); letter-spacing: 2px; text-shadow: 0 2px 6px #21003b; }
+ .cabinet-mobile-screen span { color: white; font-size: 11px; margin-top: 8px; letter-spacing: 3px; }
+}
+@media (max-width: 450px) {
+ .cabinet-shell .control-deck { grid-template-columns: 1fr; }
+ .cabinet-shell .page-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+ .cabinet-shell .social-button { font-size: 11px; }
+ .cabinet-marquee span { font-size: 8px; letter-spacing: 2px; }
+ .cabinet-marquee strong { font-size: 14px; letter-spacing: 0; }
+}
