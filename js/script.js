@@ -8,15 +8,29 @@ document.getElementById("cabinetTitle").textContent = cabinetData.game;
 document.getElementById("cabinetDescription").textContent = cabinetData.description;
 document.getElementById("cabinetButton").href = cabinetData.link;
 document.getElementById("currentYear").textContent = new Date().getFullYear();
-if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  const root = document.getElementById("backgroundEffects");
-  for (let i = 0; i < 18; i++) {
-    const token = document.createElement("span");
-    token.className = "floating-token";
-    token.style.setProperty("--token-position", `${(i * 37) % 100}%`);
-    token.style.setProperty("--token-top", `${(i * 23) % 100}%`);
-    token.style.setProperty("--token-size", `${16 + i % 4 * 10}px`);
-    token.style.setProperty("--token-delay", `${-i}s`);
-    root.append(token);
-  }
+// One update per animation frame keeps scrolling smooth.
+const scrollCoin = document.getElementById("scrollCoin");
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+let coinFrame = 0;
+
+function updateScrollCoin() {
+  coinFrame = 0;
+  if (!scrollCoin || reducedMotion.matches) return;
+  const scrollRange = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollRange > 0 ? Math.min(1, Math.max(0, window.scrollY / scrollRange)) : 0;
+  const travel = Math.max(0, scrollCoin.parentElement.clientWidth - scrollCoin.clientWidth);
+  scrollCoin.style.setProperty("--coin-x", `${progress * travel}px`);
 }
+
+function queueCoinUpdate() {
+  if (!coinFrame) coinFrame = requestAnimationFrame(updateScrollCoin);
+}
+
+window.addEventListener("scroll", queueCoinUpdate, { passive: true });
+window.addEventListener("resize", queueCoinUpdate);
+window.addEventListener("load", queueCoinUpdate);
+reducedMotion.addEventListener("change", queueCoinUpdate);
+if (typeof ResizeObserver !== "undefined") {
+  new ResizeObserver(queueCoinUpdate).observe(document.body);
+}
+queueCoinUpdate();
