@@ -42,3 +42,141 @@ body { padding-bottom: 100px; }
  .cabinet-marquee span { font-size: 8px; letter-spacing: 2px; }
  .cabinet-marquee strong { font-size: 14px; letter-spacing: 0; }
 }
+
+/* Retro window preview: the menu remains inside the cabinet on all screens. */
+body { background-attachment: fixed; }
+.arcade-card { max-width: 880px; padding: 28px 34px 22px; border-radius: 22px; border: 3px solid #c394f5; background: #f8efff; box-shadow: 0 0 0 7px #301548, 12px 14px 0 #09051c80; }
+.masthead { padding: 8px 0 25px; }
+.masthead h1 { font-size: clamp(35px,6vw,60px); }
+.cabinet-shell { max-width: 640px; border: 1px solid #7545ba; box-shadow: 0 8px 28px #4d14792b; }
+.cabinet-marquee strong { font-size: clamp(14px,3vw,27px); }
+.arcade-screen { position:absolute; top:37%; left:14%; width:72%; height:33%; border:3px solid #72f4ef; border-radius:22px; overflow:hidden; background:linear-gradient(145deg,#31125f,#7849aa 58%,#359aab); color:#fff; box-shadow:inset 0 0 22px #0007,0 0 12px #3affef88; display:flex; flex-direction:column; }
+.screen-bar { display:flex; justify-content:space-between; padding:5px 13px; background:#230e45; color:#a7fff4; font:bold 9px monospace; letter-spacing:2px; }
+.screen-content { display:grid; grid-template-columns:42% 58%; flex:1; min-height:0; padding:12px; gap:0; align-items:center; }
+.screen-player { min-width:0; align-self:stretch; display:flex; flex-direction:column; justify-content:center; }
+.screen-player img { width:100%; height:140px; object-fit:cover; border-radius:50%; border:3px solid #f0b4ec; background:#160d24; }
+.screen-player span { font:bold 7px monospace; text-align:center; margin-top:9px; color:#fce48f; }
+.screen-menu { padding-left:16px; }
+.screen-menu p { font:bold 8px monospace; letter-spacing:1px; color:#ffde8f; margin:0 0 10px; }
+.screen-menu button { display:block; width:100%; border:1px solid #f5b9ff; background:#2c1549; color:white; text-align:left; padding:9px 10px; margin:6px 0; font:bold 12px monospace; box-shadow:3px 3px 0 #f68ee5; cursor:pointer; }
+.screen-menu button:hover { background:#f7d870; color:#271437; transform:translateX(2px); }
+.screen-menu button:focus-visible { outline:3px solid #ffef62; outline-offset:2px; }
+.screen-bottom { padding:5px; text-align:center; font:bold 8px monospace; letter-spacing:2px; background:#24103d; color:#fde087; }
+dialog { padding:0; width:min(690px,calc(100% - 28px)); max-height:90vh; overflow:auto; border:3px solid #f3b4eb; border-radius:12px; color:#2c1944; background:#f9efff; box-shadow:7px 7px 0 #37b9c5,0 0 50px #cf49ff55; }
+dialog::backdrop { background:#100620bf; backdrop-filter:blur(5px); }
+.window-bar { display:flex; align-items:center; justify-content:space-between; padding:9px 14px; background:repeating-linear-gradient(135deg,#5b258e 0 10px,#6c339e 10px 12px); color:white; font:bold 12px monospace; letter-spacing:1px; }
+.close-popup { width:34px; height:34px; border:2px solid #ffc6f0; background:#291143; color:white; cursor:pointer; font:24px monospace; }
+.popup-content { padding:24px; }
+.popup-content .about-section { padding:0; border:0; }
+.popup-content .social-links { margin:25px 0; gap:22px; }
+.popup-content .social-button { font-size:13px; }
+.popup-content .current-cabinet { border:0; }
+.popup-content h2 { margin-top:0; }
+@media(max-width:700px) {
+ .arcade-card { padding:22px 14px; }
+ .screen-content { padding:7px; }
+ .screen-player img { height:clamp(70px,22vw,140px); }
+ .screen-menu { padding-left:10px; }
+ .screen-menu button { padding:7px; font-size:11px; margin:5px 0; }
+ .screen-menu p { font-size:7px; margin-bottom:5px; letter-spacing:0; }
+ .screen-bar { font-size:7px; letter-spacing:1px; padding:4px 10px; }
+ .screen-bottom { font-size:6px; letter-spacing:1px; padding:3px; }
+}
+@media(max-width:450px) {
+ body { padding-inline:10px; }
+ .arcade-card { padding-inline:8px; }
+ .arcade-screen { border-radius:14px; border-width:2px; }
+ .screen-player span { display:none; }
+ .screen-menu button { font-size:9px; padding:5px 4px; margin:4px 0; min-height:24px; }
+ .screen-menu p { font-size:6px; }
+ .screen-player img { height:70px; border-width:2px; }
+ .screen-content { padding:4px; }
+ .screen-menu { padding-left:7px; }
+ .popup-content { padding:18px; }
+ .masthead-ghost { display:none; }
+}
+
+/* Reference-inspired striped arcade window. */
+.retro-box { padding:18px; border:3px solid #6343aa; border-radius:22px; background:repeating-linear-gradient(135deg,transparent 0 19px,#ffe6f57a 20px 22px),linear-gradient(145deg,#ed76b7,#b579d0 57%,#6459b9); box-shadow:0 0 0 5px #f4df9e,7px 9px 0 #65378433; overflow:hidden; }
+.retro-title { background:#fff1ce; border:3px solid #ce5fa2; color:#7a378e; padding:9px 12px; font:bold 12px monospace; letter-spacing:1px; margin-bottom:14px; display:flex; justify-content:space-between; gap:12px; }
+.retro-title span { font-size:9px; align-self:center; }
+.retro-banner { height:280px; display:flex; position:relative; overflow:hidden; border:4px solid #f6e2ad; background:radial-gradient(circle at 20% 30%,#a64cb6,transparent 50%),linear-gradient(120deg,#2b185d,#19182d); }
+.banner-copy { position:relative; z-index:1; width:54%; padding:35px 0 20px 24px; color:white; }
+.banner-copy>span { font:bold 9px monospace; letter-spacing:1px; color:#92f1e3; }
+.banner-copy h2 { font-size:clamp(24px,4vw,38px); line-height:1.12; letter-spacing:-1px; margin:16px 0; text-shadow:3px 3px #882b8e; }
+.banner-copy p { color:#f5dca4; font-size:12px; }
+.retro-banner img { position:absolute; height:100%; width:65%; right:-7%; object-fit:cover; object-position:center; mix-blend-mode:screen; }
+.banner-star { position:absolute; right:12px; top:3px; color:#8cf6e7; font-size:55px; text-shadow:0 0 20px #56dcca; }
+.retro-menu { display:flex; gap:10px; background:#9444a5; padding:12px; border:3px solid #f3daab; border-top:0; }
+.retro-menu button { flex:1; min-height:42px; border:3px solid #56d3dc; background:#fff2df; color:#963c92; font:bold 13px monospace; cursor:pointer; box-shadow:3px 3px 0 #6c2a84; }
+.retro-menu button:hover { background:#c5fff2; transform:translateY(-2px); }
+.retro-menu button:focus-visible { outline:3px solid #fff460; outline-offset:3px; }
+.retro-welcome { text-align:center; padding:35px 10px; color:#fff8ef; text-shadow:0 2px 2px #64268f66; }
+.pixel-star { color:#fff1b8; font-size:35px; }
+.retro-welcome p { font:bold 10px monospace; letter-spacing:2px; }
+.retro-welcome h3 { font-size:30px; line-height:1.15; margin:14px 0 20px; }
+.welcome-label { display:inline-block; background:#552c82; color:#fcebb7; font:bold 9px monospace; letter-spacing:1px; padding:9px 14px; margin-top:10px; border:1px solid #e8b5eb; }
+.retro-status { display:flex; justify-content:space-between; align-items:center; gap:10px; background:#ed8ac2; border:3px solid #f5dda1; border-radius:0 0 18px 18px; color:#fff5c9; padding:10px 12px; }
+.retro-status span { text-align:center; background:#fff0da; border:2px solid #ce61a8; color:#794286; font:bold 9px monospace; padding:5px 10px; }
+.schedule-section { margin-top:12px; }
+@media(max-width:600px){
+ .retro-box { padding:10px; border-radius:15px; }
+ .retro-title { font-size:9px; padding:7px; letter-spacing:0; }
+ .retro-title span { display:none; }
+ .retro-banner { height:220px; }
+ .banner-copy { padding:24px 0 12px 12px; width:60%; }
+ .banner-copy>span { font-size:7px; }
+ .banner-copy h2 { font-size:23px; }
+ .banner-copy p { font-size:10px; }
+ .retro-banner img { right:-13%; width:77%; }
+ .retro-menu { gap:6px; padding:8px 5px; }
+ .retro-menu button { font-size:9px; padding:4px; border-width:2px; }
+ .retro-welcome { padding:24px 8px; }
+ .retro-welcome h3 { font-size:25px; }
+ .retro-status { padding:7px; gap:5px; }
+ .retro-status span { font-size:7px; padding:5px; }
+}
+
+/* Arcade Dweller palette and corner companion. */
+.retro-box { border-color:#a855f7; background:repeating-linear-gradient(135deg,transparent 0 19px,#a855f725 20px 22px),linear-gradient(145deg,#32164f,#160b27 65%,#102a3b); box-shadow:0 0 0 4px #22d3ee,0 0 24px #a855f755; }
+.retro-title { background:#160b27; border-color:#a855f7; color:#d8b4fe; }
+.retro-title span { color:#22d3ee; }
+.retro-banner { border-color:#a855f7; }
+.retro-menu { background:#211035; border-color:#a855f7; flex-wrap:wrap; }
+.retro-menu button { color:#f8f7ff; background:#32164f; border-color:#22d3ee; box-shadow:3px 3px 0 #8c41c5; }
+.retro-menu button:hover,.retro-menu button[aria-expanded="true"] { background:#22d3ee; color:#160b27; }
+.retro-welcome { position:relative; padding-bottom:105px; }
+.pixel-star { color:#22d3ee; }
+.welcome-label { background:#130b20; border-color:#a855f7; color:#67e8f9; }
+.window-cat { position:absolute; right:8px; bottom:0; width:110px; height:110px; object-fit:contain; image-rendering:pixelated; pointer-events:none; }
+.retro-status { background:#32164f; border-color:#a855f7; color:#22d3ee; }
+.retro-status span { background:#130b20; border-color:#22d3ee; color:#d8b4fe; }
+.schedule-section[hidden] { display:none; }
+@media(max-width:600px) { .retro-menu button { flex:1 1 40%; font-size:11px; } .window-cat { width:90px; height:90px; } .welcome-label { font-size:7px; } }
+@media(prefers-reduced-motion:reduce) { .window-cat { display:none; } }
+/* Explicit foreground colors keep the schedule readable on light cards. */
+.schedule-section { color:#261334; }
+.schedule-section h2 { color:#261334; }
+.schedule-section h2 em { color:#64239a; }
+.schedule-section .eyebrow,
+.schedule-section .section-intro,
+.schedule-section .timezone-note,
+.schedule-section .schedule-note { color:#51405f; }
+.schedule-controls, .week-control span { color:#261334; }
+.schedule-controls button,.schedule-controls select { color:#34164b; background:#fff; border-color:#88649f; }
+.day-card { background:#e9d9fa; border-color:#9771b7; color:#281337; }
+.day-card.off { background:#e6e0ec; border-color:#a196ad; color:#382941; }
+.day-card.weekend { background:#ffe3a0; border-color:#b68b35; color:#3b270a; }
+.day-card .day-name,.day-card h3,.day-card p { color:inherit; }
+.day-card .day-number { color:#56336c; }
+.day-card.weekend .day-number { color:#694713; }
+.day-card small { color:#51405f; }
+.day-card.today { outline-color:#08776e; }
+.today-tag { background:#075e56; color:#fff; }
+.next-stream { color:#fff; background:#241132; }
+.next-stream h3 { color:#fff; }
+.next-stream .eyebrow { color:#e0c4ff; }
+.next-stream p:not(.eyebrow),.countdown-wrap span { color:#eee1fa; }
+.countdown-wrap strong { color:#8ffff0; }
+.community h2 { color:#34164b; }
+.community .eyebrow,.community p:not(.eyebrow),.page-footer { color:#51405f; }
