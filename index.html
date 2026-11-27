@@ -15,6 +15,7 @@
 <button type="button" data-popup="aboutPopup">☺ About me</button>
 <button type="button" data-popup="socialPopup">✦ Socials</button>
 <button type="button" data-popup="cabinetPopup">▣ Current cabinet</button><button type="button" id="scheduleToggle" aria-expanded="false" aria-controls="arcade-hours">▦ Schedule</button>
+<button type="button" data-popup="mediaKit" aria-controls="mediaKit" aria-haspopup="dialog">✦ Media Kit</button>
 </nav>
 <div class="retro-welcome"><span class="pixel-star" aria-hidden="true">✦</span><p>CHOOSE YOUR PORTAL</p><h3>A new adventure<br>is one click away.</h3><p>MMORPG · JRPG · RPG</p><span class="welcome-label">SELECT SCHEDULE TO VIEW ARCADE HOURS</span><img class="window-cat" src="asset/images/pixel-cat.gif" alt="Animated pixel cat"></div>
 <div class="retro-status">✦ <span>NEW GAME. CURRENT CABINET. SAME DWELLER.</span> ✦</div>
@@ -33,4 +34,28 @@
 <a class="social-button" href="mailto:yoyohiku@gmail.com"><span class="social-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 4H22V20H2Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 5L12 13L22 5" fill="none" stroke="currentColor" stroke-width="2"/></svg></span><span>Email</span></a>
 
 </div></div></dialog><dialog id="cabinetPopup" aria-labelledby="cabinetPopupTitle"><div class="window-bar"><span id="cabinetPopupTitle">CURRENT CABINET</span><button type="button" class="close-popup" aria-label="Close popup">×</button></div><div class="popup-content"><section class="current-cabinet" id="current-cabinet" aria-labelledby="cabinetTitle"><div><p class="eyebrow">NOW PLAYING</p><h2 id="cabinetTitle">AION2</h2><p id="cabinetDescription">A brand-new MMO cabinet has activated. Experience the story with me.</p></div><a class="primary-button" id="cabinetButton" href="https://www.twitch.tv/yoyohiku" target="_blank" rel="noopener noreferrer">Visit the Arcade <span aria-hidden="true">↗</span></a></section>
-</div></dialog></body></html>
+</div></dialog>
+<dialog id="mediaKit" aria-labelledby="kitTitle">
+  <div class="window-bar"><span>MEDIA KIT</span><button type="button" class="close-popup" aria-label="Close media kit">×</button></div>
+  <div class="popup-content">
+    <p class="eyebrow">BRAND PARTNERSHIPS</p>
+    <h2 id="kitTitle">Inside the Arcade</h2>
+    <p>Sample analytics for this preview · Views cover the last 30 days.</p>
+    <div class="kit-table"><table aria-label="Sample audience by platform"><thead><tr><th>Channel</th><th>Followers / subscribers</th><th>Views</th></tr></thead><tbody><tr><th>Twitch</th><td>80 followers</td><td>320 live views</td></tr><tr><th>YouTube</th><td>50 subscribers</td><td>2,400 views</td></tr><tr><th>TikTok</th><td>110 followers</td><td>1,800 views</td></tr></tbody></table></div>
+    <h3>Work with Yoyohiku</h3>
+    <p>Bring your RPG to the Arcade for a sponsored first look, a hands-on gameplay guide, or an Arcade Replay Short.</p>
+    <button type="button" class="primary-button" data-popup="kitInquiry">Draft a partnership inquiry</button>
+  </div>
+</dialog>
+<dialog id="kitInquiry" aria-labelledby="inquiryTitle">
+  <div class="window-bar"><span>BRAND PARTNERSHIPS</span><button type="button" class="close-popup" aria-label="Close partnership inquiry">×</button></div>
+  <div class="popup-content">
+    <h2 id="inquiryTitle">Partnership inquiry</h2>
+    <p>Draft and copy a message for Yoyohiku. Your draft stays on this device.</p>
+    <label for="brief">Campaign brief</label>
+    <textarea id="brief">Hey Yoyohiku! I’m reaching out from [brand] about [game or product]. We’re interested in [stream or Short] around [date]. Our budget is [range]. You can reach me at [email].</textarea>
+    <button type="button" class="primary-button" id="copyInquiry">Copy inquiry</button>
+    <p role="status" id="copyStatus"></p>
+  </div>
+</dialog>
+</body></html>

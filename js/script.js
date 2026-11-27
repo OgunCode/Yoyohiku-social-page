@@ -74,3 +74,19 @@ scheduleToggle.addEventListener("click", () => {
 document.querySelectorAll('a[href="#arcade-hours"]').forEach(link => {
   link.addEventListener("click", showSchedule);
 });
+
+const copyStatus = document.getElementById("copyStatus");
+document.getElementById("kitInquiry").addEventListener("close", () => {
+  copyStatus.textContent = "";
+});
+document.getElementById("copyInquiry").addEventListener("click", async () => {
+  const brief = document.getElementById("brief");
+  try {
+    await navigator.clipboard.writeText(brief.value);
+    copyStatus.textContent = "Inquiry copied.";
+  } catch {
+    brief.focus();
+    brief.select();
+    copyStatus.textContent = "Your inquiry is selected. Use your device’s Copy command.";
+  }
+});
