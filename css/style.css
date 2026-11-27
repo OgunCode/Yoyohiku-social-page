@@ -180,3 +180,9 @@ dialog::backdrop { background:#100620bf; backdrop-filter:blur(5px); }
 .countdown-wrap strong { color:#8ffff0; }
 .community h2 { color:#34164b; }
 .community .eyebrow,.community p:not(.eyebrow),.page-footer { color:#51405f; }
+
+.kit-table { overflow-x:auto; margin:1rem 0 1.5rem; }
+.kit-table table { width:100%; border-collapse:collapse; font-variant-numeric:tabular-nums; }
+.kit-table th, .kit-table td { text-align:left; padding:.6rem; border-bottom:1px solid var(--line); }
+.kit-table thead { background:#32164f; color:#f8f7ff; }
+#kitInquiry textarea { display:block; width:100%; min-height:9rem; margin:.4rem 0 1rem; padding:.7rem; font:inherit; }
